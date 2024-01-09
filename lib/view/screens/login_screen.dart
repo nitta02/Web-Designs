@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_app/view/screens/home_screen.dart';
 import 'package:social_media_app/view/widgets/text.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -19,20 +20,20 @@ class LoginScreen extends StatelessWidget {
               ),
           child: Container(
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.bottomCenter,
-                stops: const [
-                  0.35,
-                  0.85,
-                ],
-                colors: [
-                  Colors.yellow.withOpacity(0.85),
-                  Colors.blue.withOpacity(0.5),
-                ],
-              ),
-            ),
+                // gradient: LinearGradient(
+                //   begin: Alignment.bottomCenter,
+                //   stops: const [
+                //     0.35,
+                //     0.85,
+                //   ],
+                //   colors: [
+                //     Colors.yellow.withOpacity(0.85),
+                //     Colors.blue.withOpacity(0.5),
+                //   ],
+                // ),
+                ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -62,9 +63,6 @@ class LoginScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5.0),
                         )),
                   ),
-                  const SizedBox(
-                    height: 5,
-                  ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: MaterialButton(
@@ -87,7 +85,13 @@ class LoginScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(5.0),
                     ),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomeScreen(),
+                            ));
+                      },
                       child: const CustomText(
                         text: 'Login',
                         fontSize: 18,
@@ -98,9 +102,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                   const CustomText(
                     text: 'or',
-                    fontSize: 18,
+                    fontSize: 16,
                     color: Colors.black,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w400,
                   ),
                   const SizedBox(
                     height: 10,
@@ -174,9 +178,9 @@ class LoginScreen extends StatelessWidget {
                     children: [
                       const CustomText(
                         text: "Don't have account?",
-                        fontSize: 18,
+                        fontSize: 16,
                         color: Colors.black,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w400,
                       ),
                       const SizedBox(
                         width: 5,
@@ -186,9 +190,9 @@ class LoginScreen extends StatelessWidget {
                         onPressed: () {},
                         child: const CustomText(
                           text: 'SignUp',
-                          fontSize: 18,
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
                     ],

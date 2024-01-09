@@ -11,8 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'SocioMedia',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.blue.withOpacity(0.5),
         fontFamily: 'Raleway',
       ),
       home: const SplashScreen(),

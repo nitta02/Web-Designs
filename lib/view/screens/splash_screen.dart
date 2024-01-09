@@ -16,29 +16,29 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/images/img1.jpg'),
-            fit: BoxFit.cover,
-            filterQuality: FilterQuality.high,
-          ),
-        ),
+        // decoration: const BoxDecoration(
+        //   image: DecorationImage(
+        //     image: AssetImage('assets/images/img1.jpg'),
+        //     fit: BoxFit.cover,
+        //     filterQuality: FilterQuality.high,
+        //   ),
+        // ),
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.bottomRight,
-              stops: [
+              stops: const [
                 0.35,
                 0.85,
               ],
               colors: [
-                Colors.black.withOpacity(0.85),
-                Colors.black.withOpacity(0.45),
+                Colors.black.withOpacity(0.8),
+                Colors.black.withOpacity(0.4),
               ],
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(20.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.center,
