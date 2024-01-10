@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:iconly/iconly.dart';
 import 'package:social_media_app/view/widgets/text.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -33,25 +34,45 @@ class _HomeScreenState extends State<HomeScreen> {
         elevation: 0.0,
       ),
       body: Column(
-        children: [],
+        children: const [],
       ),
       bottomNavigationBar: BottomNavigationBar(
-          currentIndex: currentIndex,
-          onTap: (value) {
-            setState(() {
-              currentIndex = value;
-            });
-          },
-          items: [
-            BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/svgs/house-chimney.svg'),
-                label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.favorite), label: 'favorite'),
-            BottomNavigationBarItem(
-                icon: SvgPicture.asset('assets/svgs/api.svg'),
-                label: 'Settings'),
-          ]),
+        currentIndex: currentIndex,
+        onTap: (value) {
+          setState(() {
+            currentIndex = value;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(
+                IconlyLight.home,
+              ),
+              label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                IconlyLight.star,
+              ),
+              label: 'favorite'),
+          BottomNavigationBarItem(
+              icon: Icon(IconlyLight.add_user), label: 'Add'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                IconlyLight.setting,
+              ),
+              label: 'Settings'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                IconlyLight.profile,
+              ),
+              label: 'Profile'),
+        ],
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.blue,
+        type: BottomNavigationBarType.shifting,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+      ),
     );
   }
 }
