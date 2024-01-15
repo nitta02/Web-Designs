@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:social_media_app/view/screens/home_screen.dart';
+import 'package:social_media_app/view/screens/pages/home_screen.dart';
 import 'package:social_media_app/view/widgets/text.dart';
 
 class LoginScreen extends StatelessWidget {
