@@ -44,7 +44,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         elevation: 0.0,
       ),
-      body: pages[currentIndex],
+      body: Container(
+        child: pages[currentIndex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
         onTap: (value) {
