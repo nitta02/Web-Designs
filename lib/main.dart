@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:social_media_app/view/screens/splash_screen.dart';
+import 'package:social_media_app/view/screens/splash/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const Sozo());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Sozo extends StatelessWidget {
+  const Sozo({super.key});
 
   @override
   Widget build(BuildContext context) {

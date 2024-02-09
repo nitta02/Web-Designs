@@ -5,6 +5,10 @@ class AddUserScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(body: ListView.builder(
+      itemBuilder: (context, index) {
+        return ListTile();
+      },
+    ));
   }
 }
