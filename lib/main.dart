@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 import 'package:social_media_app/view/screens/splash_screen.dart';
 
 void main() {
@@ -10,14 +11,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'SocioMedia',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        scaffoldBackgroundColor: Colors.blue.withOpacity(0.5),
-        fontFamily: 'Raleway',
-      ),
-      home: const SplashScreen(),
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return MaterialApp(
+          title: 'Sozo',
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+              // scaffoldBackgroundColor: Colors.blue.withOpacity(0.5),
+              // fontFamily: 'Raleway',
+              ),
+          home: const SplashScreen(),
+        );
+      },
     );
   }
 }

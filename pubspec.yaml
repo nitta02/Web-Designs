@@ -78,11 +78,14 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Raleway
+    - family: Raleway-Bold
       fonts:
         - asset: assets/fonts/Raleway-Bold.ttf
+        # - asset: assets/fonts/Raleway-Medium.ttf
+        # - asset: assets/fonts/Raleway-Thin.ttf
+    - family: Raleway-Medium
+      fonts:
         - asset: assets/fonts/Raleway-Medium.ttf
-        - asset: assets/fonts/Raleway-Thin.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

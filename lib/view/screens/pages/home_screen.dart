@@ -1,11 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
-import 'package:social_media_app/view/screens/pages/add_users.dart';
-import 'package:social_media_app/view/screens/pages/fav_screen.dart';
-import 'package:social_media_app/view/screens/pages/profile_screen.dart';
-import 'package:social_media_app/view/screens/pages/setting_screen.dart';
-import 'package:social_media_app/view/widgets/text.dart';
+import 'package:social_media_app/utils/colors.dart';
+import 'package:social_media_app/utils/textStyles.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -17,71 +14,63 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   late int currentIndex = 0;
 
-  final pages = [
-    const HomeScreen(),
-    const FavoriteScreen(),
-    const AddUserScreen(),
-    const SettingScreen(),
-    const ProfileScreen(),
-  ];
+  // final pages = [
+  //   const HomeScreen(),
+  //   const AddUserScreen(),
+  //   const ProfileScreen(),
+  // ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const CustomText(
-          text: 'SocioMedia',
-          fontSize: 18,
-          color: Colors.black,
-          fontWeight: FontWeight.normal,
+        title: Text(
+          'SOZO',
+          style: AppTextStyles.heading22Bold,
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: const Icon(CupertinoIcons.location),
+            icon: Icon(
+              CupertinoIcons.qrcode,
+              color: black,
+            ),
           ),
         ],
         elevation: 0.0,
       ),
-      body: Container(
-        child: pages[currentIndex],
-      ),
+      // body: Container(
+      //   child: pages[currentIndex],
+      // ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentIndex,
+        elevation: 0.0,
+        selectedLabelStyle: AppTextStyles.small10,
+        unselectedLabelStyle: AppTextStyles.small8Bold,
         onTap: (value) {
           setState(() {
             currentIndex = value;
           });
         },
-        items: const [
+        items: [
           BottomNavigationBarItem(
               icon: Icon(
                 IconlyLight.home,
               ),
               label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(
-                IconlyLight.star,
-              ),
-              label: 'favorite'),
-          BottomNavigationBarItem(
               icon: Icon(IconlyLight.add_user), label: 'Add'),
-          BottomNavigationBarItem(
-              icon: Icon(
-                IconlyLight.setting,
-              ),
-              label: 'Settings'),
           BottomNavigationBarItem(
               icon: Icon(
                 IconlyLight.profile,
               ),
               label: 'Profile'),
         ],
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.blue,
+        selectedItemColor: black,
+        unselectedItemColor: grey,
         type: BottomNavigationBarType.shifting,
-        showSelectedLabels: false,
+        showSelectedLabels: true,
         showUnselectedLabels: false,
       ),
     );
