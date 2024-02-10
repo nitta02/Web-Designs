@@ -1,177 +1,78 @@
-// import 'package:flutter/material.dart';
-// import 'package:social_media_app/view/screens/pages/home_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:sizer/sizer.dart';
+import 'package:social_media_app/utils/colors.dart';
+import 'package:social_media_app/utils/textStyles.dart';
+import 'package:social_media_app/view/screens/main/main_screen.dart';
 
-// class LoginScreen extends StatelessWidget {
-//   const LoginScreen({super.key});
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: SafeArea(
-//         child: Container(
-//           width: double.infinity,
-//           decoration: const BoxDecoration(
-//               // image: DecorationImage(
-//               //   image: AssetImage('assets/images/img2.jpg'),
-//               //   fit: BoxFit.cover,
-//               //   filterQuality: FilterQuality.high,
-//               // ),
-//               ),
-//           child: Container(
-//             decoration: BoxDecoration(
-//                 // gradient: LinearGradient(
-//                 //   begin: Alignment.bottomCenter,
-//                 //   stops: const [
-//                 //     0.35,
-//                 //     0.85,
-//                 //   ],
-//                 //   colors: [
-//                 //     Colors.yellow.withOpacity(0.85),
-//                 //     Colors.blue.withOpacity(0.5),
-//                 //   ],
-//                 // ),
-//                 ),
-//             child: Padding(
-//               padding: const EdgeInsets.all(20.0),
-//               child: Column(
-//                 mainAxisAlignment: MainAxisAlignment.center,
-//                 children: [
-                  
-//                   const SizedBox(
-//                     height: 20,
-//                   ),
-//                   TextField(
-//                     decoration: InputDecoration(
-//                         hintText: 'Email',
-//                         border: OutlineInputBorder(
-//                           borderRadius: BorderRadius.circular(5.0),
-//                         )),
-//                   ),
-//                   const SizedBox(
-//                     height: 10,
-//                   ),
-//                   TextField(
-//                     decoration: InputDecoration(
-//                         hintText: 'Password',
-//                         border: OutlineInputBorder(
-//                           borderRadius: BorderRadius.circular(5.0),
-//                         )),
-//                   ),
-//                   // Align(
-//                   //   alignment: Alignment.centerRight,
-//                   //   child: MaterialButton(
-//                   //     onPressed: () {},
-//                   //     child: const CustomText(
-//                   //       text: 'Forget password',
-//                   //       fontSize: 12,
-//                   //       color: Colors.red,
-//                   //       fontWeight: FontWeight.bold,
-//                   //     ),
-//                   //   ),
-//                   // ),
-//                   const SizedBox(
-//                     height: 5,
-//                   ),
-//                   Container(
-//                     width: double.infinity,
-//                     decoration: BoxDecoration(
-//                       color: Colors.white.withOpacity(0.5),
-//                       borderRadius: BorderRadius.circular(5.0),
-//                     ),
-//                     child: MaterialButton(
-//                       onPressed: () {
-//                         Navigator.push(
-//                             context,
-//                             MaterialPageRoute(
-//                               builder: (context) => const HomeScreen(),
-//                             ));
-//                       },
-//                       child: const CustomText(
-//                         text: 'Login',
-//                         fontSize: 18,
-//                         color: Colors.black,
-//                         fontWeight: FontWeight.bold,
-//                       ),
-//                     ),
-//                   ),
-//                   const CustomText(
-//                     text: 'or',
-//                     fontSize: 16,
-//                     color: Colors.black,
-//                     fontWeight: FontWeight.w400,
-//                   ),
-//                   const SizedBox(
-//                     height: 10,
-//                   ),
-//                   Container(
-//                     width: double.infinity,
-//                     decoration: BoxDecoration(
-//                       color: Colors.white.withOpacity(0.5),
-//                       borderRadius: BorderRadius.circular(5.0),
-//                     ),
-//                     child: MaterialButton(
-//                       onPressed: () {},
-//                       child: Row(
-//                         mainAxisAlignment: MainAxisAlignment.center,
-//                         children: [
-//                           Image.asset(
-//                             'assets/icons/google.png',
-//                             height: 30,
-//                             fit: BoxFit.cover,
-//                           ),
-//                           const SizedBox(
-//                             width: 20,
-                          
-//                         ],
-//                       ),
-//                     ),
-//                   ),
-//                   const SizedBox(
-//                     height: 10,
-//                   ),
-//                   Container(
-//                     width: double.infinity,
-//                     decoration: BoxDecoration(
-//                       color: Colors.white.withOpacity(0.5),
-//                       borderRadius: BorderRadius.circular(5.0),
-//                     ),
-//                     child: MaterialButton(
-//                       onPressed: () {},
-//                       child: Row(
-//                         mainAxisAlignment: MainAxisAlignment.center,
-//                         children: [
-//                           Image.asset(
-//                             'assets/icons/facebook.png',
-//                             height: 30,
-//                             fit: BoxFit.cover,
-//                           ),
-//                           const SizedBox(
-//                             width: 5,
-//                           ),
-                          
-//                         ],
-//                       ),
-//                     ),
-//                   ),
-//                   const SizedBox(
-//                     height: 10,
-//                   ),
-//                   Row(
-//                     mainAxisAlignment: MainAxisAlignment.center,
-//                     children: [
-                     
-//                       const SizedBox(
-//                         width: 5,
-//                       ),
-                     
-//                     ],
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Scaffold(
+          body: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: 4.w,
+          vertical: 2.h,
+        ),
+        child: Column(
+          children: [
+            const Image(image: AssetImage('assets/images/image1.png')),
+            Text(
+              'SOZO',
+              style: AppTextStyles.heading22Bold,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
+                  hintText: 'Email',
+                  hintStyle: AppTextStyles.textFieldHintTextStyle,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  )),
+            ),
+            SizedBox(
+              height: 2.h,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
+                  hintText: 'Password',
+                  hintStyle: AppTextStyles.textFieldHintTextStyle,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(5.0),
+                  )),
+            ),
+            SizedBox(
+              height: 4.h,
+            ),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(94.w, 6.h),
+                  backgroundColor: grey,
+                ),
+                onPressed: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      PageTransition(
+                          child: const MainScreen(),
+                          type: PageTransitionType.leftToRight),
+                      (route) => false);
+                },
+                child: Text(
+                  'Sign In',
+                  style: AppTextStyles.authButtonTextStyle,
+                ))
+          ],
+        ),
+      )),
+    );
+  }
+}

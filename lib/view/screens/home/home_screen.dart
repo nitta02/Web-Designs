@@ -32,15 +32,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 child: ListTile(
                   title: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      CircleAvatar(
-                        child: Icon(IconlyLight.profile),
-                        maxRadius: 15.sp,
+                      const Text(
+                        'Name',
                       ),
                       SizedBox(
                         width: 5.w,
                       ),
-                      Text('Name')
+                      CircleAvatar(
+                        maxRadius: 15.sp,
+                        child: const Icon(IconlyLight.profile),
+                      ),
                     ],
                   ),
                   titleTextStyle: AppTextStyles.body14,

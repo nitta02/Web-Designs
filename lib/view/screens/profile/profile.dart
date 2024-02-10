@@ -18,8 +18,8 @@ class ProfileScreen extends StatelessWidget {
           Column(
             children: [
               CircleAvatar(
-                child: const Icon(IconlyLight.profile),
                 minRadius: 14.w,
+                child: const Icon(IconlyLight.profile),
               ),
               SizedBox(
                 height: 2.h,
@@ -33,14 +33,27 @@ class ProfileScreen extends StatelessWidget {
           SizedBox(
             height: 3.h,
           ),
+          Divider(),
           ListTile(
+            // horizontalTitleGap: MediaQuery.of(context).size.width / 1.6,
             leading: const Icon(IconlyLight.bookmark),
             title: const Text('Saved'),
             titleTextStyle: AppTextStyles.body14,
           ),
           ListTile(
+            // horizontalTitleGap: MediaQuery.of(context).size.width / 1.6,
+            leading: const Icon(Icons.light_mode),
+            title: const Text('Theme'),
+            titleTextStyle: AppTextStyles.body14,
+          ),
+          ListTile(
             leading: const Icon(IconlyLight.edit),
             title: const Text('Edit'),
+            titleTextStyle: AppTextStyles.body14,
+          ),
+          ListTile(
+            leading: const Icon(IconlyLight.logout),
+            title: const Text('Sign Out'),
             titleTextStyle: AppTextStyles.body14,
           )
         ],
