@@ -14,6 +14,10 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  final nameController = TextEditingController();
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -63,6 +67,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             Column(
               children: [
                 TextField(
+                  controller: nameController,
+                  keyboardType: TextInputType.name,
                   decoration: InputDecoration(
                       contentPadding:
                           EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
@@ -76,6 +82,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   height: 2.h,
                 ),
                 TextField(
+                  controller: emailController,
+                  keyboardType: TextInputType.emailAddress,
                   decoration: InputDecoration(
                       contentPadding:
                           EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
@@ -89,6 +97,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   height: 2.h,
                 ),
                 TextField(
+                  controller: passwordController,
                   decoration: InputDecoration(
                       contentPadding:
                           EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),

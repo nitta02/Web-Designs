@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:social_media_app/utils/textStyles.dart';
@@ -38,17 +37,25 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Image(
-                image: AssetImage('assets/images/playstore.png'),
+                // height: 40.h,
+                image: AssetImage(
+                  'assets/images/playstore.png',
+                ),
                 filterQuality: FilterQuality.high),
+
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   'sozo',
-                  style: AppTextStyles.heading20Bold,
+                  style: AppTextStyles.heading26Bold,
                 ),
                 Text(
-                  'Spend time with your thoughts and friends',
+                  'Share your thoughts &',
+                  style: AppTextStyles.simpleFieldTextStyleyeloow,
+                ),
+                Text(
+                  'Spend time with your friends',
                   style: AppTextStyles.body14,
                 )
               ],
