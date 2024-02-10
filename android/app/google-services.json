@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "962126450822",
+    "project_id": "sozo-ed834",
+    "storage_bucket": "sozo-ed834.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962126450822:android:1a5c003c8e5f532b9e0107",
+        "android_client_info": {
+          "package_name": "com.example.social_media_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJvaVSoRgDcayB2j7dcCrKGWrt4Qmv1KE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

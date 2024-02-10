@@ -146,4 +146,20 @@ class AppTextStyles {
     fontFamily: 'Raleway-Bold',
     color: black,
   );
+
+  ///SIMPLE TEXT
+
+  static TextStyle simpleFieldTextStyle = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.normal,
+    fontFamily: 'Raleway-Medium',
+    color: black,
+  );
+
+  static TextStyle simpleFieldTextStyleyeloow = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.normal,
+    fontFamily: 'Raleway-Medium',
+    color: Colors.amber,
+  );
 }

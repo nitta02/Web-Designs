@@ -40,7 +40,7 @@ class _MainScreenState extends State<MainScreen> {
           elevation: 0.0,
           bottom: TabBar(
             labelStyle: AppTextStyles.small10,
-            indicatorColor: blue,
+            indicatorColor: Colors.amber,
             unselectedLabelStyle: AppTextStyles.small8,
             tabs: [
               Tab(
