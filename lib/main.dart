@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+import 'package:social_media_app/controller/signIn_controller.dart';
 import 'package:social_media_app/firebase_options.dart';
 import 'package:social_media_app/view/screens/splash/splash_screen.dart';
 
@@ -19,14 +21,21 @@ class Sozo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(
       builder: (context, orientation, deviceType) {
-        return MaterialApp(
-          title: 'Sozo',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-              // scaffoldBackgroundColor: Colors.blue.withOpacity(0.5),
-              // fontFamily: 'Raleway',
-              ),
-          home: const SplashScreen(),
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider(
+              create: (context) => SignUpController(),
+            ),
+          ],
+          child: MaterialApp(
+            title: 'Sozo',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+                // scaffoldBackgroundColor: Colors.blue.withOpacity(0.5),
+                // fontFamily: 'Raleway',
+                ),
+            home: const SplashScreen(),
+          ),
         );
       },
     );

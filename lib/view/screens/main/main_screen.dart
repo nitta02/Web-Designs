@@ -23,7 +23,7 @@ class _MainScreenState extends State<MainScreen> {
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: 4.h,
-          titleTextStyle: AppTextStyles.heading22Bold,
+          titleTextStyle: AppTextStyles.heading22Boldamber,
           automaticallyImplyLeading: false,
           title: const Text(
             'SOZO',

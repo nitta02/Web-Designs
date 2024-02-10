@@ -103,6 +103,12 @@ class AppTextStyles {
     fontFamily: 'Raleway-Bold',
     color: black,
   );
+    static TextStyle heading22Boldamber = TextStyle(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.normal,
+    fontFamily: 'Raleway-Bold',
+    color: Colors.amber,
+  );
   static TextStyle heading20Bold = TextStyle(
     fontSize: 20.sp,
     fontWeight: FontWeight.normal,
