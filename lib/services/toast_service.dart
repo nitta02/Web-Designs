@@ -28,12 +28,12 @@ class ToastService {
                     ? Icons.check_circle
                     : toastStatus == 'ERROR'
                         ? Icons.warning_sharp
-                        : Icons.warning_rounded,
+                    : Icons.warning_rounded,
                 color: toastStatus == 'SUCCESS'
                     ? success
                     : toastStatus == 'ERROR'
                         ? error
-                        : Colors.amber,
+                        : Colors.green,
               ),
               const SizedBox(
                 width: 8,
@@ -50,10 +50,10 @@ class ToastService {
             ],
           ),
         ),
-        animation: StyledToastAnimation.slideFromTop,
-        reverseAnimation: StyledToastAnimation.slideFromTop,
+        animation: StyledToastAnimation.slideFromBottom,
+        reverseAnimation: StyledToastAnimation.slideFromBottomFade,
         context: context,
         duration: const Duration(seconds: 5),
-        position: StyledToastPosition.top);
+        position: StyledToastPosition.bottom);
   }
 }

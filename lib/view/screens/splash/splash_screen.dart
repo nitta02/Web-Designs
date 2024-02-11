@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:social_media_app/services/firebase_service.dart';
 import 'package:social_media_app/utils/textStyles.dart';
+import 'package:social_media_app/view/screens/main/main_screen.dart';
 import 'package:social_media_app/view/screens/sign&signout/login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -14,13 +16,23 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    Timer(const Duration(seconds: 3), () {
-      Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const SignInScreen(),
-          ));
-    });
+    if (auth.currentUser != null) {
+      Timer(const Duration(seconds: 3), () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const MainScreen(),
+            ));
+      });
+    } else {
+      Timer(const Duration(seconds: 3), () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const SignInScreen(),
+            ));
+      });
+    }
     super.initState();
   }
 
