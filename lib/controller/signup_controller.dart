@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:social_media_app/controller/session_controller.dart';
 import 'package:social_media_app/model/registrationModel.dart';
 import 'package:social_media_app/services/firebase_service.dart';
 import 'package:social_media_app/services/toast_service.dart';
@@ -16,14 +17,17 @@ class SignUpController extends ChangeNotifier {
     notifyListeners();
   }
 
-  signUpFunction(BuildContext context, RegistrationModel registrationModel) {
+  signUpFunction(
+      BuildContext context, RegistrationModel registrationModel) async {
     try {
       auth
           .createUserWithEmailAndPassword(
               email: registrationModel.email!,
               password: registrationModel.password!)
           .then((value) {
-        databaseReference.push().set({
+        SessionController().userId = auth.currentUser!.uid.toString();
+        databaseReference.child(value.user!.uid).push().set({
+          'userId': value.user!.uid.toString(),
           'name': registrationModel.name,
           'email': registrationModel.email,
           'password': registrationModel.password

@@ -1,70 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
-import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
-import 'package:social_media_app/controller/signup_controller.dart';
+import 'package:social_media_app/controller/session_controller.dart';
+import 'package:social_media_app/services/firebase_service.dart';
 import 'package:social_media_app/utils/textStyles.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
   @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Consumer<SignUpController>(
-      builder: (context, value, child) {
-        return ListView(
-          padding: EdgeInsets.symmetric(
-            horizontal: 2.w,
-            vertical: 1.h,
-          ),
-          children: [
-            Column(
-              children: [
-                CircleAvatar(
-                  minRadius: 14.w,
-                  child: const Icon(IconlyLight.profile),
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                Text(
-                  'Name',
-                  style: AppTextStyles.heading20,
-                )
-              ],
+    return Scaffold(
+        body: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 2.w,
+              vertical: 1.h,
             ),
-            SizedBox(
-              height: 3.h,
-            ),
-            Divider(),
-            ListTile(
-              // horizontalTitleGap: MediaQuery.of(context).size.width / 1.6,
-              leading: const Icon(IconlyLight.bookmark),
-              title: const Text('Saved'),
-              titleTextStyle: AppTextStyles.body14,
-            ),
-            ListTile(
-              // horizontalTitleGap: MediaQuery.of(context).size.width / 1.6,
-              leading: const Icon(Icons.light_mode),
-              title: const Text('Theme'),
-              titleTextStyle: AppTextStyles.body14,
-            ),
-            ListTile(
-              leading: const Icon(IconlyLight.edit),
-              title: const Text('Edit'),
-              titleTextStyle: AppTextStyles.body14,
-            ),
-            ListTile(
-              onTap: () {
-                value.signOutFunction(context);
+            child: StreamBuilder(
+              stream: fetchDatabaseReference
+                  .child(SessionController().userId.toString())
+                  .onValue,
+              builder: (context, AsyncSnapshot snapshot) {
+                if (!snapshot.hasData) {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else if (snapshot.data != null) {
+                  Map<dynamic, dynamic> map = snapshot.data.snapshot.value;
+
+                  return Column(
+                    children: [
+                      CircleAvatar(
+                        minRadius: 14.w,
+                        child: const Icon(IconlyLight.profile),
+                      ),
+                      SizedBox(height: 2.h),
+                      Text(
+                        map['name'] ??
+                            '', // Display name or empty string if null
+                        style: AppTextStyles.heading20,
+                      ),
+                      SizedBox(height: 3.h),
+                    ],
+                  );
+                } else {
+                  return const Center(
+                    child: Text('Something went wrong'),
+                  );
+                }
               },
-              leading: const Icon(IconlyLight.logout),
-              title: const Text('Sign Out'),
-              titleTextStyle: AppTextStyles.body14,
-            )
-          ],
-        );
-      },
-    ));
+            )));
   }
 }

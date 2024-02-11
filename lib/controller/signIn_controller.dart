@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:social_media_app/controller/session_controller.dart';
 import 'package:social_media_app/model/registrationModel.dart';
 import 'package:social_media_app/services/firebase_service.dart';
 import 'package:social_media_app/services/toast_service.dart';
@@ -19,7 +20,7 @@ class SignInController extends ChangeNotifier {
   signInFunction(
       BuildContext context, RegistrationModel registrationModel) async {
     try {
-      await auth
+      auth
           .signInWithEmailAndPassword(
               email: registrationModel.email!,
               password: registrationModel.password!)
@@ -28,6 +29,8 @@ class SignInController extends ChangeNotifier {
             context: context,
             message: 'Successfully Login',
             toastStatus: 'SUCCESS');
+
+        SessionController().userId = auth.currentUser!.uid.toString();
         Navigator.pushAndRemoveUntil(
             context,
             PageTransition(

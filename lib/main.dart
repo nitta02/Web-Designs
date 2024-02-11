@@ -34,6 +34,9 @@ class Sozo extends StatelessWidget {
             ChangeNotifierProvider(
               create: (context) => ForgetPasswordController(),
             ),
+            // ChangeNotifierProvider(
+            //   create: (context) => GetFetchServices(),
+            // ),
           ],
           child: MaterialApp(
             title: 'Sozo',

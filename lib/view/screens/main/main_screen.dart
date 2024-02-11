@@ -7,6 +7,7 @@ import 'package:social_media_app/utils/textStyles.dart';
 import 'package:social_media_app/view/screens/home/home_screen.dart';
 import 'package:social_media_app/view/screens/profile/add_user.dart';
 import 'package:social_media_app/view/screens/profile/profile.dart';
+import 'package:social_media_app/view/screens/settings/setting_screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -19,7 +20,7 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: 4.h,
@@ -63,7 +64,14 @@ class _MainScreenState extends State<MainScreen> {
                   IconlyLight.profile,
                   color: black,
                 ),
-              )
+              ),
+              Tab(
+                // text: 'Profile',
+                icon: Icon(
+                  IconlyLight.setting,
+                  color: black,
+                ),
+              ),
             ],
           ),
         ),
@@ -72,6 +80,7 @@ class _MainScreenState extends State<MainScreen> {
             HomeScreen(),
             AddUserScreen(),
             ProfileScreen(),
+            SettingScreen(),
           ],
         ),
       ),

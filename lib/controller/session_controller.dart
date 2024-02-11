@@ -7,6 +7,5 @@ class SessionController {
   factory SessionController() {
     return sessionController;
   }
-
   SessionController._sessionController() {}
 }

@@ -16,3 +16,6 @@ FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
 DatabaseReference databaseReference =
     FirebaseDatabase.instance.ref().child('Users');
+
+DatabaseReference fetchDatabaseReference =
+    FirebaseDatabase.instance.ref('Users');
