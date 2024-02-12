@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:social_media_app/controller/forgetPass_controller.dart';
+import 'package:social_media_app/controller/post_controller.dart';
 import 'package:social_media_app/controller/signIn_controller.dart';
 import 'package:social_media_app/controller/signup_controller.dart';
 import 'package:social_media_app/firebase_options.dart';
@@ -34,9 +35,9 @@ class Sozo extends StatelessWidget {
             ChangeNotifierProvider(
               create: (context) => ForgetPasswordController(),
             ),
-            // ChangeNotifierProvider(
-            //   create: (context) => GetFetchServices(),
-            // ),
+            ChangeNotifierProvider(
+              create: (context) => PostController(),
+            ),
           ],
           child: MaterialApp(
             title: 'Sozo',

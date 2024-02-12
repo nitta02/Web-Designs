@@ -111,8 +111,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                             ),
                             TextFormField(
                               validator: (value) {
-                                if (value == null || value.isEmpty) {
+                                bool emailValid = RegExp(
+                                        r"^[a-zA-Z0-9.a-zA-z0-9.!#$%&'*+/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                    .hasMatch(value!);
+                                if (value.isEmpty) {
                                   return 'Enter Valid Email';
+                                } else if (!emailValid) {
+                                  return "Enter valid Email";
                                 } else {
                                   return null;
                                 }

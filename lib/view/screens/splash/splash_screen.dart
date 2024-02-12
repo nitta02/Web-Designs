@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:social_media_app/controller/session_controller.dart';
 import 'package:social_media_app/services/firebase_service.dart';
 import 'package:social_media_app/utils/textStyles.dart';
 import 'package:social_media_app/view/screens/main/main_screen.dart';
@@ -18,7 +17,6 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     if (auth.currentUser != null) {
-      SessionController().userId = auth.currentUser!.uid.toString();
       Timer(const Duration(seconds: 3), () {
         Navigator.push(
             context,
