@@ -50,6 +50,7 @@ dependencies:
   fluttertoast: ^8.2.4
   uuid: ^4.3.3
   flutter_styled_toast: ^2.2.1
+  shared_preferences: ^2.2.2
 
 dev_dependencies:
   flutter_test:

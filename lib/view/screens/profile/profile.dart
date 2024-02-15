@@ -109,8 +109,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     IconButton(
-                                      onPressed: () {
-                                      },
+                                      onPressed: () {},
                                       icon: Icon(isLiked
                                           ? Icons.favorite
                                           : IconlyLight.heart),

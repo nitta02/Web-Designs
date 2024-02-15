@@ -3,13 +3,20 @@ import 'package:iconly/iconly.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:social_media_app/controller/signup_controller.dart';
+import 'package:social_media_app/provider/darkTheme_provider.dart';
 import 'package:social_media_app/utils/textStyles.dart';
 
-class SettingScreen extends StatelessWidget {
+class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
 
   @override
+  State<SettingScreen> createState() => _SettingScreenState();
+}
+
+class _SettingScreenState extends State<SettingScreen> {
+  @override
   Widget build(BuildContext context) {
+    final providerValue = Provider.of<ThemeProvider>(context);
     return Scaffold(body: Consumer<SignUpController>(
       builder: (context, value, child) {
         return ListView(
@@ -25,11 +32,15 @@ class SettingScreen extends StatelessWidget {
               titleTextStyle: AppTextStyles.body14,
             ),
             const Divider(),
-            ListTile(
-              // horizontalTitleGap: MediaQuery.of(context).size.width / 1.6,
-              leading: const Icon(Icons.light_mode),
-              title: const Text('Theme'),
-              titleTextStyle: AppTextStyles.body14,
+            SwitchListTile(
+              title: const Text('Theme Mode'),
+              secondary: Icon(providerValue.getDarkTheme
+                  ? Icons.dark_mode_outlined
+                  : Icons.light_mode_outlined),
+              value: providerValue.getDarkTheme,
+              onChanged: (value) {
+                providerValue.setTheTheme = value;
+              },
             ),
             const Divider(),
             ListTile(
