@@ -15,6 +15,44 @@
 
 </head>
 <body class="bg-white-100">
+      <!-- Navigation Bar -->
+      <nav class="bg-gray-900 text-white">
+        <div class="container mx-auto flex justify-between items-center py-4">
+            <!-- Logo or Brand Name -->
+            <a href="#" class="text-2xl font-bold">Luxury Dubai Holidays</a>
+            <!-- Navigation Links (Hidden on smaller screens) -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-yellow-500">Home</a>
+                <a href="#" class="hover:text-yellow-500">Destinations</a>
+                <a href="#" class="hover:text-yellow-500">Offers</a>
+                <a href="#" class="hover:text-yellow-500">Contact</a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="menu" class="hidden md:hidden">
+            <a href="#" class="block px-4 py-2 hover:bg-yellow-500">Home</a>
+            <a href="#" class="block px-4 py-2 hover:bg-yellow-500">Destinations</a>
+            <a href="#" class="block px-4 py-2 hover:bg-yellow-500">Offers</a>
+            <a href="#" class="block px-4 py-2 hover:bg-yellow-500">Contact</a>
+        </div>
+    </nav>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+    </script>
 
 
     <!-- Header Section -->
